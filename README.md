@@ -4,13 +4,13 @@ As presented at the Society of Interventional Radiology 2018 meeting in Los Ange
 https://www.sirmeeting.org/
 
 ## Parts
-Raspberry Pi 3
-Microsd card
-Webcam (we use Logitech C270, although any vl42 compatible webcam will work)
-USB light (or any lighting to adequately illuminate the phantom) 
-Foot pedal (any momentary foot switch can be used, alternatively the space-bar on a keyboard can be used)
-Phantom (created from trasnparent polyethylene tubing and Loctite plastics binding system)
-Hdmi monitor 
+* Raspberry Pi 3
+* Microsd card
+* Webcam (we use Logitech C270, although any vl42 compatible webcam will work)
+* USB light (or any lighting to adequately illuminate the phantom) 
+* Foot pedal (any momentary foot switch can be used, alternatively the space-bar on a keyboard can be used)
+* Phantom (created from trasnparent polyethylene tubing and Loctite plastics binding system)
+* Hdmi monitor 
 
 ## Raspberry Pi Setup
 Install raspbian on the microsd card to be placed in the raspberry. 
