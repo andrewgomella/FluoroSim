@@ -8,18 +8,18 @@ Based on opencv video_threaded.py sample (Multithreaded video processing sample)
 https://github.com/opencv/opencv/tree/master/samples/python
 
 Usage:
-   fluoro_sim.py {<video device number>|<video file name>}
-   Shows how python threading capabilities can be used
-   to organize parallel captured frame processing pipeline
-   for smoother playback.
+   fluoro_sim.py {<video device number>}
+
 Keyboard shortcuts:
    ESC - exit
+   Space - Toggle Peddle
    1 - Toggle Overlay
    2 - Toggle Subtraction
    3 - Fullscreen
    4 - Windowed mode
    5 - Retake background image used in subtraction
    6 - Equalize histogram
+   7 - Toggle HUD (On screen text display)
 '''
 
 # Python 2/3 compatibility
@@ -134,6 +134,7 @@ if __name__ == '__main__':
         #add overlay
         if overlay_mode:
             frame = cv.addWeighted(overlay, 0.5, frame, 0.5, 0)
+        #equalize histogram
         if equalize_mode:
             frame = cv.equalizeHist(frame)
         return frame, t0
@@ -147,6 +148,7 @@ if __name__ == '__main__':
     overlay_mode = True
     equalize_mode = True 
     peddle_mode = True
+    hud_mode = True
 
     latency = StatValue()
     frame_interval = StatValue()
@@ -155,11 +157,13 @@ if __name__ == '__main__':
         while len(pending) > 0 and pending[0].ready():
             res, t0 = pending.popleft().get()
             latency.update(clock() - t0)
-            draw_str(res, (20, 20), "(1)Toggle Subtraction : " + str(subtract_mode) + "  (3)Fullscreen (4)Windowed")
-            draw_str(res, (20, 40), "(2)Toggle Overlay     : " + str(overlay_mode) + "   (5)Take Background (6)EqualizeHist")
-            draw_str(res, (20, 60), "(Space) Toggle Peddle : " + str(peddle_mode))
-            #draw_str(res, (20, 60), "frame interval :  %.1f ms" % (frame_interval.value*1000))
-            #draw_str(res, (20, 80), "threaded      :  " + str(threaded_mode))
+            if hud_mode:
+                draw_str(res, (20, 20), "(1)Toggle Subtraction : " + str(subtract_mode) + "  (3)Fullscreen (4)Windowed")
+                draw_str(res, (20, 40), "(2)Toggle Overlay     : " + str(overlay_mode) + "   (5)Take Background (6)EqualizeHist")
+                draw_str(res, (20, 60), "(Space) Toggle Peddle : " + str(peddle_mode) + "  (7)Toggle HUD")
+                #draw_str(res, (20, 80), "latency        :  %.1f ms" % (latency.value*1000))
+                #draw_str(res, (20, 60), "frame interval :  %.1f ms" % (frame_interval.value*1000))
+                #draw_str(res, (20, 80), "threaded      :  " + str(threaded_mode))
             if GPIO.input(4) == 0:
                 draw_str(res, (20, 450), "PEDAL ACTIVE")
             cv.imshow('FLUORO', res)
@@ -192,6 +196,8 @@ if __name__ == '__main__':
             background = cv.cvtColor(background, cv.COLOR_RGB2GRAY)
         if ch == 54:
             equalize_mode = not equalize_mode
+        if ch == 55:
+            hud_mode = not hud_mode
         if ch == 27:
             break
 cv.destroyAllWindows()
