@@ -146,6 +146,7 @@ if __name__ == '__main__':
     threaded_mode = True
     overlay_mode = True
     equalize_mode = True 
+    peddle_mode = True
 
     latency = StatValue()
     frame_interval = StatValue()
@@ -154,15 +155,16 @@ if __name__ == '__main__':
         while len(pending) > 0 and pending[0].ready():
             res, t0 = pending.popleft().get()
             latency.update(clock() - t0)
-            draw_str(res, (20, 20), "(1)Toggle Overlay      : " + str(overlay_mode) + "   (3)Fullscreen (4)Windowed")
-            draw_str(res, (20, 40), "(2)Toggle Subtraction : " + str(subtract_mode) + "   (5)Take Background (6)EqualizeHist")
+            draw_str(res, (20, 20), "(1)Toggle Subtraction : " + str(subtract_mode) + "  (3)Fullscreen (4)Windowed")
+            draw_str(res, (20, 40), "(2)Toggle Overlay     : " + str(overlay_mode) + "   (5)Take Background (6)EqualizeHist")
+            draw_str(res, (20, 60), "(Space) Toggle Peddle : " + str(peddle_mode))
             #draw_str(res, (20, 60), "frame interval :  %.1f ms" % (frame_interval.value*1000))
             #draw_str(res, (20, 80), "threaded      :  " + str(threaded_mode))
             if GPIO.input(4) == 0:
                 draw_str(res, (20, 450), "PEDAL ACTIVE")
             cv.imshow('FLUORO', res)
         if len(pending) < threadn:
-            if GPIO.input(4) == 0:
+            if (GPIO.input(4) == 0 or peddle_mode == False):
                 ret, frame = cap.read()
                 t = clock()
                 frame_interval.update(t - last_frame_time)
@@ -175,6 +177,8 @@ if __name__ == '__main__':
         ch = cv.waitKey(1)
         #if ch == ord(' '):
         #    threaded_mode = not threaded_mode
+        if ch == ord(' '):
+            peddle_mode = not peddle_mode
         if ch == 49:
             subtract_mode = not subtract_mode
         if ch == 50:
