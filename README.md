@@ -1,5 +1,6 @@
 # FluoroSim
 an interventional radiology geared fluoroscopy simulator using a raspberry pi3 with webcam
+
 As presented at the Society of Interventional Radiology 2018 meeting in Los Angeles. 
 https://www.sirmeeting.org/
 
@@ -26,17 +27,17 @@ https://en.wikipedia.org/wiki/Abdominal_x-ray#/media/File:Medical_X-Ray_imaging_
 
 ## Operation
 Usage(in the terminal)
-   fluoro_sim.py {<video device number>}
+* fluoro_sim.py {<video device number>}
 
 Keyboard shortcuts:
-   ESC - exit
-   Space - Toggle Peddle
-   1 - Toggle Overlay
-   2 - Toggle Subtraction
-   3 - Fullscreen
-   4 - Windowed mode
-   5 - Retake background image used in subtraction
-   6 - Equalize histogram
+* ESC - exit
+* Space - Toggle Peddle
+* 1 - Toggle Overlay
+* 2 - Toggle Subtraction
+* 3 - Fullscreen
+* 4 - Windowed mode
+* 5 - Retake background image used in subtraction
+* 6 - Equalize histogram
 
 
 
