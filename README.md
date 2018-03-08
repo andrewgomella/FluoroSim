@@ -7,7 +7,7 @@ https://www.sirmeeting.org/
 ## Parts
 * Raspberry Pi 3
 * Microsd card
-* Webcam (we use Logitech C270, although any vl42 compatible webcam will work)
+* Webcam (we use Logitech C270, although any v4l2 compatible webcam will work)
 * USB light (or any lighting to adequately illuminate the phantom) 
 * Foot pedal (any momentary foot switch can be used, alternatively the space-bar on a keyboard can be used)
 * Phantom (created from trasnparent polyethylene tubing and Loctite plastics binding system)
@@ -27,7 +27,7 @@ https://en.wikipedia.org/wiki/Abdominal_x-ray#/media/File:Medical_X-Ray_imaging_
 
 ## Operation
 Usage(in the terminal)
-* fluoro_sim.py {<video device number>}
+* fluoro_sim.py {< video device number >}
 
 Keyboard shortcuts:
 * ESC - exit
