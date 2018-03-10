@@ -1,5 +1,5 @@
 # FluoroSim
-an interventional radiology geared fluoroscopy simulator using a raspberry pi3 with webcam
+An interventional radiology geared fluoroscopy simulator using a raspberry pi3 with webcam
 
 As presented at the Society of Interventional Radiology 2018 meeting in Los Angeles. 
 https://www.sirmeeting.org/
