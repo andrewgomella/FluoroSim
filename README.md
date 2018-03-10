@@ -21,6 +21,8 @@ Install the RPi.GPIO library https://pypi.python.org/pypi/RPi.GPIO for use of th
 Download fluoro-simulator.py and run with "python fluoro-simulator.py" from the terminal
 The foot pedal was wired into the GPIO4 (Pin #07) and DC Power 3.3V (Pin #01) on the Raspberry Pi. If needed you may change these in the fluoro-simulator.py file to reflect your requirements. 
 
+To run at boot time edit ~/.config/lxsession/LXDE-pi/autostart and append "@python fluoro_sim.py", adjust accordingly for your path to fluoro_sim.py. 
+
 ## Overlay
 Choose an overlay image that is appropriate for your transparent phantom. Place the overlay image into the same directory as fluorosim.py and name it according the OVERLAY_IMAGE variable, which comes preset as skel.jpg. Four our demo we use an abdominal radiograph from wikipedia found here: https://en.wikipedia.org/wiki/Abdominal_x-ray
 https://en.wikipedia.org/wiki/Abdominal_x-ray#/media/File:Medical_X-Ray_imaging_ALP02_nevit.jpg
