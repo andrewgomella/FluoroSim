@@ -11,7 +11,7 @@ https://www.sirmeeting.org/
 * USB light (or any lighting to adequately illuminate the phantom) 
 * Foot pedal (any momentary foot switch can be used, alternatively the space-bar on a keyboard can be used)
 * Phantom (created from trasnparent polyethylene tubing and Loctite plastics binding system)
-* Hdmi monitor 
+* HDMI monitor 
 
 ## Raspberry Pi Setup
 * Install raspbian on the microsd card to be placed in the raspberry (Detailed instructions can be found here: https://www.raspberrypi.org/documentation/installation/installing-images/ )
