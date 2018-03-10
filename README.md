@@ -17,7 +17,7 @@ https://www.sirmeeting.org/
 * Install raspbian on the microsd card to be placed in the raspberry (Detailed instructions can be found here: https://www.raspberrypi.org/documentation/installation/installing-images/ )
 * Install OpenCV along with python bindings
 * Install the RPi.GPIO library https://pypi.python.org/pypi/RPi.GPIO for use of the foot pedal
-* The foot pedal was wired into the GPIO4 (Pin #07) and DC Power 3.3V (Pin #01) on the Raspberry Pi. If needed you may change these in the fluoro-simulator.py file to reflect your requirements. 
+* Connect the foot pedal to GPIO4 (Pin #07) and DC Power 3.3V (Pin #01) on the Raspberry Pi. If needed you may change these in the fluoro-simulator.py file to reflect your requirement 
 * Download fluoro-simulator.py and run with "python fluoro-simulator.py" from the terminal
 * To automatically run at boot time edit ~/.config/lxsession/LXDE-pi/autostart and append the command "@python fluoro_sim.py", adjust accordingly for your path to fluoro_sim.py
 
