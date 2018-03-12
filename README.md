@@ -10,7 +10,7 @@ https://www.sirmeeting.org/
 * Webcam (we use Logitech C270, although any v4l2 compatible webcam will work)
 * USB light (or any lighting to adequately illuminate the phantom) 
 * Foot pedal (any momentary foot switch can be used, alternatively the space-bar on a keyboard can be used)
-* Phantom (created from trasnparent polyethylene tubing and Loctite plastics binding system)
+* Phantom (created from transparent polyethylene tubing and Loctite plastics binding system)
 * HDMI monitor 
 
 ## Raspberry Pi Setup
