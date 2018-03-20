@@ -3,6 +3,7 @@ An interventional radiology geared fluoroscopy simulator using a raspberry pi3 w
 
 As presented at the Society of Interventional Radiology 2018 meeting in Los Angeles. 
 https://www.sirmeeting.org/
+https://sir.multilearning.com/sir/2018/eposters/208734/andrew.gomella.technique.for.creating.a.low-cost.fluoroscopy.simulation.unit.html?f=media=2
 
 ## Parts
 * Raspberry Pi 3
